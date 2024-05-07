@@ -4,10 +4,6 @@ from joblib import load
 import matplotlib.pyplot as plt
 import seaborn as sns
 from imblearn.over_sampling import RandomOverSampler
-# from sklearn.ensemble import BaggingClassifier
-# from sklearn.ensemble import StackingClassifier
-# from catboost import CatBoostClassifier
-# from sklearn.naive_bayes import GaussianNB
 import tensorflow as tf
 import numpy as np
 from tensorflow.python.keras.models import load_model
@@ -147,10 +143,7 @@ def Model():
         model_stac = load('StackingClassifier.joblib')
         st.success('StackingClassifier: 1 ' + ' Задержка рейса' if model_stac.predict(df_used) == 1 else 'StackingClassifier: 0 ' + 'Нет задержки рейса')
 
-
-        # from tensorflow.keras.optimizers import Adam
-        # custom_objects = {'Adam': Adam}
-        model_sq = load_model('Sequential.h5')#,custom_objects=custom_objects)
+        model_sq = load_model('Sequential.h5')
         st.success('Sequential: 1 ' + ' Задержка рейса' if (np.around(model_sq.predict(df_used))[0]) == 1 else 'Sequential: 0 ' + 'Нет задержки рейса')
 
 
