@@ -6,7 +6,7 @@ import seaborn as sns
 from imblearn.over_sampling import RandomOverSampler
 import tensorflow as tf
 import numpy as np
-from tensorflow.python.keras.models import load_model
+from tensorflow.keras.models import load_model
 
 
 def Author():
