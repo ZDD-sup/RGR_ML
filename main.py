@@ -114,12 +114,12 @@ def Model():
     st.subheader("Введите данные для предсказания:")
 
     input_data_reg = {}
-    input_data_reg['Airline'] = st.number_input('Авиакомпания', min_value=-10000, max_value=10000, value=12)
-    input_data_reg['AirportFrom'] = st.number_input('Аэропорт из', min_value=-10000, max_value=10000, value=252)
-    input_data_reg['AirportTo'] = st.number_input('Аэропорт в', min_value=-10000, max_value=10000, value=193)
-    input_data_reg['DayOfWeek'] = st.number_input('День недели', min_value=-10000, max_value=10000, value=5)
-    input_data_reg['Time'] = st.number_input('Время вылета(Минуты)', min_value=-10000, max_value=10000, value=499)
-    input_data_reg['Length'] = st.number_input('Продолжительость полёта(Минуты)', min_value=-10000, max_value=10000, value=200)
+    input_data_reg['Airline'] = st.number_input('Авиакомпания', min_value=0, max_value=17, value=12)
+    input_data_reg['AirportFrom'] = st.number_input('Аэропорт из', min_value=0, max_value=291, value=252)
+    input_data_reg['AirportTo'] = st.number_input('Аэропорт в', min_value=0, max_value=291, value=193)
+    input_data_reg['DayOfWeek'] = st.number_input('День недели', min_value=1, max_value=7, value=5)
+    input_data_reg['Time'] = st.number_input('Время вылета(Минуты)', min_value=10, max_value=1439, value=499)
+    input_data_reg['Length'] = st.number_input('Продолжительость полёта(Минуты)', min_value=0, max_value=655, value=200)
     
 
     if st.button('Сделать предсказание'):
