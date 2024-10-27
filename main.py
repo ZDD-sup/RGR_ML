@@ -138,7 +138,7 @@ def Model():
         df_used['Delay'] = 1
         data_array = df_used.values
         df_used = df_used.drop(['Delay'], axis=1)
-        st.success('Hierarchy: 1 ' +  + ' Задержка рейса' if model_clus.predict(data_array) == 1 else 'Hierarchy: 0 ' +'Нет задержки рейса')
+        st.success('Kmeans: 1 ' + ' Задержка рейса' if model_clus.predict(data_array) == 1 else 'Kmeans: 0 ' +'Нет задержки рейса')
 
         model_stac = load('StackingClassifier.joblib')
         st.success('StackingClassifier: 1 ' + ' Задержка рейса' if model_stac.predict(df_used) == 1 else 'StackingClassifier: 0 ' + 'Нет задержки рейса')
